@@ -35,7 +35,13 @@ public class Evento {
             this.postiTotali = postiTotali;
         }
 
-        this.postiPrenotati = POSTI_PRENOTATI;
+        if (postiPrenotati > postiTotali) {
+            throw new IllegalArgumentException("Il numero di posti prenotati non può essere maggiore dei posti totali");
+        }
+        else {
+            this.postiPrenotati = POSTI_PRENOTATI;
+        }
+
     }
 
 
